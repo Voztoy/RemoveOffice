@@ -1,0 +1,16 @@
+@echo off
+echo === DANG XOA CAC FILE VA REGISTRY LIEN QUAN OFFICE ===
+
+:: Xoa thu muc Microsoft Office
+rd /s /q "C:\Program Files (x86)\Microsoft Office"
+rd /s /q "C:\Program Files\Microsoft Office"
+rd /s /q "%userprofile%\AppData\Local\Microsoft\Office"
+rd /s /q "%userprofile%\AppData\Roaming\Microsoft\Office"
+
+:: Xoa registry lien quan Office
+REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office" /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Office" /f
+
+:: Hien thong bao xoa xong
+echo === XOA XONG! VUI LONG KHOI DONG LAI MAY ===
+pause
